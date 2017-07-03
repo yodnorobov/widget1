@@ -50,6 +50,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         Contact.customers_selected = function (self) {
         self.widgetsOverlay(false);
         console.log(self);
+        var c_data = self.list_selected().selected;
+        console.log(c_data);
     };
 
     Contact.render = function (self) {
