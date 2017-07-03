@@ -17,6 +17,9 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log('id getter');
 
         var c_data = self.list_selected().selected;
+        
+        console.log(c_data);
+        
         // $('#js-sub-lists-container').children().remove(); //Контейнер очищается затем в контейнер собираются элементы, выделенные в списке.контейнер - div блок виджета, отображается в правой колонке.
         var names = [], // Массив имен
             length = c_data.length; // Количество выбранных id (отсчет начинается с 0)
@@ -50,8 +53,10 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         Contact.customers_selected = function (self) {
         self.widgetsOverlay(false);
         console.log(self);
-        var c_data = self.list_selected().selected;
-        console.log(c_data);
+        //var c_data = self.list_selected().selected;
+        //console.log(c_data);
+        Contact.type = 'customers';
+        Contact.ids_getter(self);
     };
 
     Contact.render = function (self) {
