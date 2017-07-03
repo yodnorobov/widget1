@@ -46,6 +46,11 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         Contact.type = 'contacts';
         Contact.csv_request();
     };
+    
+        Contact.customers_selected = function (self) {
+        self.widgetsOverlay(false);
+        console.log(self);
+    };
 
     Contact.render = function (self) {
 
