@@ -16,8 +16,9 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
         console.log('id getter');
 
-        var c_data = self.list_selected().selected;
         
+        var c_data = self.list_selected().selected;
+        debugger;
         console.log(c_data);
         
         // $('#js-sub-lists-container').children().remove(); //Контейнер очищается затем в контейнер собираются элементы, выделенные в списке.контейнер - div блок виджета, отображается в правой колонке.
