@@ -66,7 +66,9 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     Contact.render = function (self) {
         
-        $(".list-multiple-actions__item__icon.icon.icon-delete-trash").on('appendCompleted', function(){
+        $('body').on('click', '.icon-delete-trash', function(){console.log('42append42')});
+        
+        $(".icon-delete-trash").on('appendCompleted', function(){
     console.log('append completed');
 });
         
