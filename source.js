@@ -45,12 +45,14 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     Contact.contacts_selected = function (self) {
         
+        console.log('selected');
+        
         $(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
         
         self.widgetsOverlay(false);
-        Contact.ids_getter(self);
-        Contact.type = 'contacts';
-        Contact.csv_request();
+        //Contact.ids_getter(self);
+        //Contact.type = 'contacts';
+        //Contact.csv_request();
     };
     
         Contact.customers_selected = function (self) {
@@ -63,6 +65,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     };
 
     Contact.render = function (self) {
+        
+        
         
         $(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
 
