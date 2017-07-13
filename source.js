@@ -18,7 +18,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
         
         var c_data = self.list_selected().selected;
-        debugger;
         console.log(c_data);
         
         // $('#js-sub-lists-container').children().remove(); //Контейнер очищается затем в контейнер собираются элементы, выделенные в списке.контейнер - div блок виджета, отображается в правой колонке.
@@ -64,6 +63,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     };
 
     Contact.render = function (self) {
+        
+        $(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
 
         self.widgetsOverlay(false);
 
