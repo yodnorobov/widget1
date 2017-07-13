@@ -47,7 +47,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         
         console.log('selected');
         
-        $(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
+        //$(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
         
         self.widgetsOverlay(false);
         //Contact.ids_getter(self);
@@ -74,7 +74,11 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         
         
         
-        $(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
+        //$(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
+        
+        $(".control-checkbox__body").children().each(function(){
+            settimeout($(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>"),1000)
+        }
 
         self.widgetsOverlay(false);
 
