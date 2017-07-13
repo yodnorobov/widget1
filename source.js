@@ -45,6 +45,9 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     };
 
     Contact.contacts_selected = function (self) {
+        
+        $(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
+        
         self.widgetsOverlay(false);
         Contact.ids_getter(self);
         Contact.type = 'contacts';
