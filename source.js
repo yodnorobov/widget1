@@ -37,6 +37,9 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     };
 
     Contact.leads_selected = function (self) {
+        
+        return true;
+        
         //self.widgetsOverlay(false);
         Contact.ids_getter(self);
         Contact.type = 'leads';
