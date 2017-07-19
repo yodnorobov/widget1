@@ -82,7 +82,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
             //settimeout($(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>"),1000)
         //}
 
-        self.widgetsOverlay(false);
+        //self.widgetsOverlay(false);
 
         console.log(self.system().area);
 
