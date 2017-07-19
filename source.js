@@ -37,7 +37,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     };
 
     Contact.leads_selected = function (self) {
-        self.widgetsOverlay(false);
+        //self.widgetsOverlay(false);
         Contact.ids_getter(self);
         Contact.type = 'leads';
         Contact.csv_request();
@@ -49,14 +49,14 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         
         //$(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
         
-        self.widgetsOverlay(false);
+        //self.widgetsOverlay(false);
         //Contact.ids_getter(self);
         //Contact.type = 'contacts';
         //Contact.csv_request();
     };
     
         Contact.customers_selected = function (self) {
-        self.widgetsOverlay(false);
+        //self.widgetsOverlay(false);
         console.log(self);
         //var c_data = self.list_selected().selected;
         //console.log(c_data);
@@ -66,13 +66,10 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     Contact.render = function (self) {
         
-        return true;
-        
-        $(function() {
-            
-            console.log('loaded');
-            $('#widgets_block').show();
-});
+        //$(function() {    
+        //    console.log('loaded');
+        //    $('#widgets_block').show();
+        //});
         
         console.log('render');
         
