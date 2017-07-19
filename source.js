@@ -69,6 +69,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         $(function() {
             
             console.log('loaded');
+            $('#widgets_block').show();
 });
         
         console.log('render');
