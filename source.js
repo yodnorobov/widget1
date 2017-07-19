@@ -66,6 +66,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     Contact.render = function (self) {
         
+        return true;
+        
         $(function() {
             
             console.log('loaded');
