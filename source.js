@@ -66,19 +66,19 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     Contact.render = function (self) {
         
-        $('body').on('click', '.icon-delete-trash', function(){console.log('42append42')});
+        //$('body').on('click', '.icon-delete-trash', function(){console.log('42append42')});
         
-        $(".icon-delete-trash").on('appendCompleted', function(){
-    console.log('append completed');
-});
+        //$(".icon-delete-trash").on('appendCompleted', function(){
+    //console.log('append completed');
+//});
         
         
         
         //$(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
         
-        $(".control-checkbox__body").children().each(function(){
-            settimeout($(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>"),1000)
-        }
+        //$(".control-checkbox__body").children().each(function(){
+            //settimeout($(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>"),1000)
+        //}
 
         self.widgetsOverlay(false);
 
