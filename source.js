@@ -109,7 +109,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
                <div class="ac-already-subs"></div>\
                    <link type="text/css" rel="stylesheet" href="./style.css" >'
          });
-          }
          console.log('rendering end');
          Contact.init(self);
         return true;
