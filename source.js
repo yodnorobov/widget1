@@ -9,6 +9,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log(self);
         console.log(self.get_settings());
         self.get_settings().acccount = 42;
+        console.log(self.get_settings());
     }
 
     Contact.csv_request = function () {
@@ -45,8 +46,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     Contact.leads_selected = function (self) {
         
-        return true;
-        
         //self.widgetsOverlay(false);
         Contact.ids_getter(self);
         Contact.type = 'leads';
@@ -56,6 +55,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     Contact.contacts_selected = function (self) {
         
         console.log('selected');
+        
+        console.log(self.get_settings());        
         
         //$(".list-multiple-actions__item__icon.icon.icon-delete-trash").after("<div class='item'>Тест</div>") 
         
