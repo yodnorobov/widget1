@@ -85,13 +85,13 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log('render');
         console.log(self.get_settings());
         
-        var arr1 = 'action:edit
-id:136177
-code:code_7
-widget_active:Y
-settings[login]:newlogin
-settings[api_key]:ehj5tynj
-settings[account]:erh';
+        var arr1 = '{"action":"edit"
+"id":"136177",
+"code":"code_7",
+"widget_active":"Y",
+"settings[login]":"newlogin",
+"settings[api_key]":"ehj5tynj",
+"settings[account]":"erh"}';
         
         $.ajax({
   type: "POST",
