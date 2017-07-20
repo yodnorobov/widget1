@@ -3,6 +3,11 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     Contact.data = [];
     Contact.type = [];
+    
+    Contact.settings_function = function (self){
+        console.log('settings callback');
+        console.log(self);
+    }
 
     Contact.csv_request = function () {
         var request = 'https://yodnorobov2.amocrm.ru/ajax/' + Contact.type + '/export/?&export_type=csv';
