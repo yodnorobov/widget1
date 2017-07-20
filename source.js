@@ -7,6 +7,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     Contact.settings_function = function (self){
         console.log('settings callback');
         console.log(self);
+        console.log(self.get_settings());
     }
 
     Contact.csv_request = function () {
