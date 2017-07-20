@@ -85,22 +85,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log('render');
         console.log(self.get_settings());
         
-        $.ajax({
-  type: "POST",
-  url: 'https://yodnorobov3.amocrm.ru/ajax/widgets/edit',
-  data: {"action":"edit",
-"id":"136177",
-"code":"code_7",
-"widget_active":"Y",
-"settings[login]":"424242newlogin424242",
-"settings[api_key]":"ehj5tynj",
-"settings[account]":"erh"},
-  success: function(data){console.log(data)},
-  dataType: 'json'
-});
-
-        console.log(self.get_settings());
-        
         //$('body').on('click', '.icon-delete-trash', function(){console.log('42append42')});
         
         //$(".icon-delete-trash").on('appendCompleted', function(){
