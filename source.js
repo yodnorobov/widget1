@@ -83,6 +83,25 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         //});
         
         console.log('render');
+        console.log(self.get_settings());
+        
+        var arr1 = 'action:edit
+id:136177
+code:code_7
+widget_active:Y
+settings[login]:newlogin
+settings[api_key]:ehj5tynj
+settings[account]:erh';
+        
+        $.ajax({
+  type: "POST",
+  url: 'https://yodnorobov3.amocrm.ru/ajax/widgets/edit',
+  data: arr1,
+  success: function(data){console.log(data)},
+  dataType: 'json'
+});
+
+        console.log(self.get_settings());
         
         //$('body').on('click', '.icon-delete-trash', function(){console.log('42append42')});
         
