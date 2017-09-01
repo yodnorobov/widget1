@@ -53,13 +53,20 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
       $('.search_field_text').keyup(function(){
         var value = $('.search_field_text').val();
-        
+
         console.log(value);
-        
+
+        $.ajax({
+          type: "GET",
+          url: 'https://amobase.amocrm.ru/article/search?q=' + value + '&page=1&',
+          success: function(data){console.log(data)}
+          //dataType: 'json'
+        });
+
         //$('#errmsg').empty();
         //$('#errmsg').text(Value);
       });
-      
+
       //$('.ac-form-button').on('click', function () {
       //  var search_data = $('.search_field_text').text();
       //  console.log('BUTTON CLICKED' + search_data);
