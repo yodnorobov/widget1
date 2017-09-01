@@ -47,7 +47,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
 
         
-        data1 = "
+        var data1 = '
 Как вывести на экран большее количество контактов/компаний?
 
 Контакты/Компании → Просмотр/Редактирование/Управление
@@ -62,7 +62,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
 ВАЖНО! Больше контактов на одной странице вывести нельзя, только 50 (стандартно) или 500.
 
-"
+'
         
         console.log(url);
         $.ajax({
