@@ -173,8 +173,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       };
     }
 
-
     return Contact;
   }
-  );
+})
+  
 
