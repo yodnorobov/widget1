@@ -33,7 +33,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
                   <div class="ac-form-button ac_sub">SEND</div>\
                   </div>\
               <div class="ac-already-subs"></div>\
-                  <link type="text/css" rel="stylesheet" href="/widgets/' + w_code + '/style.css" >'
+                  <link type="text/css" rel="stylesheet" href="/widgets/' + w_code + '/style.css" >\
+                  <input class="search_field_text" name="q" type="text">'
     });
 
     return true;
