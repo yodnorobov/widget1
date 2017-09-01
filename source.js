@@ -47,7 +47,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
 
         
-        var data1 = jQuery('Как вывести на экран большее количество контактов/компаний?
+        var data1 = JSON.stringify('Как вывести на экран большее количество контактов/компаний?
 
 Контакты/Компании → Просмотр/Редактирование/Управление
 ... рейдите по ссылке: https://ACCAUNT.amocrm.ru/contacts/list/?ELEMENT_COUNT=500слово "аккаунт", надо ...
@@ -59,7 +59,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
 Если вы хотите вывести 500 контактов одновременно с использованием какого-либо фильтра, то вам необходимо применить нужный вам фильтр, а затем в адресной строке добавить &ELEMENT_COUNT=500.
 
-ВАЖНО! Больше контактов на одной странице вывести нельзя, только 50 (стандартно) или 500.').text();
+ВАЖНО! Больше контактов на одной странице вывести нельзя, только 50 (стандартно) или 500.);
         
         console.log(url);
         $.ajax({
