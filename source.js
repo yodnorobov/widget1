@@ -3,7 +3,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
   Contact.data = [];
   Contact.type = [];
-  
+
   Contact.render = function (self) {
 
     console.log('render function');
@@ -12,6 +12,10 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     if (self.system().area === 'cucard' || 'lcard') {
       console.log(self.system().area);
     }
+
+    var lang = self.i18n('userLang');
+    w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
+    
     return true;
   };
 
@@ -30,20 +34,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       }
     });
     return modal;
-  };
-
-  Contact.leads_selected = function (self) {
-    self.widgetsOverlay(false);
-    Contact.ids_getter(self);
-    Contact.type = 'leads';
-    Contact.csv_request();
-  };
-
-  Contact.contacts_selected = function (self) {
-    self.widgetsOverlay(false);
-    Contact.ids_getter(self);
-    Contact.type = 'contacts';
-    Contact.csv_request();
   };
 
   Contact.bind_function = function (self) {
