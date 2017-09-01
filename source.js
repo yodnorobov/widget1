@@ -48,7 +48,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
         $.ajax({
           type: "GET",
-          url: 'https://amocrm.ru/widgets/' + AMOCRM.widgets.system.domain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=AMOCRM.widgets.system.amohash',
+          url: 'https://amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=AMOCRM.widgets.system.amohash',
           success: function (data) {
             console.log(data);
             Contact.display_modal();
