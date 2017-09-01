@@ -40,7 +40,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         //console.log(self.get_settings().widget_code);
         //console.log(self.get_settings().password);
         //console.log(self.get_settings().hash);
-        
+
         //AMOCRM.widgets.system
 
         //console.log(value);
@@ -49,11 +49,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
           type: "GET",
           url: 'http://amobase.saas/article/search?q=contacts',
           success: function (data) {
-            console.log(
-              data;
-              
-              Contact.display_modal()
-            )
+            console.log(data);
+            Contact.display_modal();
           }
           //dataType: 'json'
         });
