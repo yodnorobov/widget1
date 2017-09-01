@@ -41,7 +41,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         //console.log(self.get_settings().password);
         //console.log(self.get_settings().hash);
 
-        //AMOCRM.widgets.system
+        console.log(AMOCRM.widgets.system);
 
         //console.log(value);
 
