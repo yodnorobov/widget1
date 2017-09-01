@@ -43,14 +43,18 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         //url: 'http://amobase.saas/article/search?q=contacts'
 
         console.log(AMOCRM.widgets.system);
+        
+        var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=AMOCRM.widgets.system.amohash';
+        
+        console.log(url);
 
-        console.log('https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=AMOCRM.widgets.system.amohash');
+        //console.log('https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=AMOCRM.widgets.system.amohash');
         
         
 
         $.ajax({
           type: "GET",
-          url: 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=AMOCRM.widgets.system.amohash',
+          url: url,
           success: function (data) {
             console.log(data);
             Contact.display_modal();
