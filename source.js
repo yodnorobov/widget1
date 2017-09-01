@@ -17,8 +17,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       console.log(self.system().area);
     }
 
-    var lang = self.i18n('userLang');
-    w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
+//     var lang = self.i18n('userLang');
+//     w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
 
 //     self.render_template({
 //       caption: {
