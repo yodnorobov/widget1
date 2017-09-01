@@ -40,14 +40,15 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         //console.log(self.get_settings().widget_code);
         //console.log(self.get_settings().password);
         //console.log(self.get_settings().hash);
+        //url: 'http://amobase.saas/article/search?q=contacts'
 
-        console.log(AMOCRM.widgets.system.amouser);
+        console.log(AMOCRM.widgets.system);
 
         //console.log(value);
 
         $.ajax({
           type: "GET",
-          url: 'http://amobase.saas/article/search?q=contacts',
+          url: 'https://amocrm.ru/widgets/' + AMOCRM.widgets.system.domain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=AMOCRM.widgets.system.amohash',
           success: function (data) {
             console.log(data);
             Contact.display_modal();
