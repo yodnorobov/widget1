@@ -62,7 +62,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
 ВАЖНО! Больше контактов на одной странице вывести нельзя, только 50 (стандартно) или 500.
 
-'
+';
         
         console.log(url);
         $.ajax({
