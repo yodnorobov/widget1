@@ -15,7 +15,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     var lang = self.i18n('userLang');
     w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
-    
+
     console.log(w_code);
 
     self.render_template({
@@ -59,9 +59,20 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
   Contact.bind_function = function (self) {
     if (self.system().area === 'culist' || 'llist') {
-      $('.ac-form-button').on('click', function () {
-        console.log('BUTTON CLICKED');
+
+      $('.search_field_text').keyup(function(){
+        var value = $('.search_field_text').val();
+        
+        console.log(value);
+        
+        //$('#errmsg').empty();
+        //$('#errmsg').text(Value);
       });
+      
+      //$('.ac-form-button').on('click', function () {
+      //  var search_data = $('.search_field_text').text();
+      //  console.log('BUTTON CLICKED' + search_data);
+      //});
     }
     return true;
   };
