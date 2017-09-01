@@ -21,7 +21,12 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     self.render_template({
       caption: {
         class_name: 'js-ac-caption',
-        html: ''
+        html: '
+                <div class="search_field_wrapper">
+			          <input class="search_field_text" name="q" type="text">
+			          <input class="search_field_btn" type="submit" value="" alt="Ok">
+		            </div>
+              '
       },
       body: '',
       render: '\
