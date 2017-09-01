@@ -30,6 +30,9 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
               </div>\
                   <div id="js-ac-sub-subs-container">\
                   </div>\
+
+                  <input class="search_field_text" name="q" type="text">\
+
                   <div class="ac-form-button ac_sub">SEND</div>\
                   </div>\
               <div class="ac-already-subs"></div>\
