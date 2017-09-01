@@ -43,12 +43,10 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         //url: 'http://amobase.saas/article/search?q=contacts'
 
         console.log(AMOCRM.widgets.system);
-        
-        var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash';
-        
+
+        var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=contacts&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
+
         console.log(url);
-
-
         $.ajax({
           type: "GET",
           url: url,
@@ -59,7 +57,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
           //dataType: 'json'
         });
       });
-
       //$('.ac-form-button').on('click', function () {
       //  var search_data = $('.search_field_text').text();
       //  console.log('BUTTON CLICKED' + search_data);
@@ -67,7 +64,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     }
     return true;
   };
-
   Contact.display_modal = function () {
     //var string = '';
     //for (var i = 0; i < contacts.length; i++) {
@@ -78,7 +74,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     setTimeout(modal.destroy.bind(modal), 5000);
     //}
   };
-
   Contact.modal = function (data) {
     var modal = new Modal({
       class_name: 'modal-window',
@@ -95,7 +90,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     });
     return modal;
   };
-
   Contact.init = function (self) {
     console.log('init');
     return true;
