@@ -12,30 +12,29 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log(self.get_settings());
     }
 
-    Contact.csv_request = function () {
-        var request = 'https://yodnorobov2.amocrm.ru/ajax/' + Contact.type + '/export/?&export_type=csv';
-        for (var i = 0; i < Contact.data.length; i++) {
-            request = request + '&filter[ID][' + i + ']=' + Contact.data[i]['ids'];
-        }
-        document.location.href = request;
-    };
+//     Contact.csv_request = function () {
+//         var request = 'https://yodnorobov2.amocrm.ru/ajax/' + Contact.type + '/export/?&export_type=csv';
+//         for (var i = 0; i < Contact.data.length; i++) {
+//             request = request + '&filter[ID][' + i + ']=' + Contact.data[i]['ids'];
+//         }
+//         document.location.href = request;
+//     };
 
-    Contact.ids_getter = function (self) {
+//     Contact.ids_getter = function (self) {
 
-        console.log('id getter');
-
+//         console.log('id getter');
         
-        var c_data = self.list_selected().selected;
-        console.log(c_data);
+//         var c_data = self.list_selected().selected;
+//         console.log(c_data);
         
-        // $('#js-sub-lists-container').children().remove(); //Контейнер очищается затем в контейнер собираются элементы, выделенные в списке.контейнер - div блок виджета, отображается в правой колонке.
-        var names = [], // Массив имен
-            length = c_data.length; // Количество выбранных id (отсчет начинается с 0)
-        for (var i = 0; i < length; i++) {
-            names[i] = {
-                ids: c_data[i].id
-            };
-        }
+//         // $('#js-sub-lists-container').children().remove(); //Контейнер очищается затем в контейнер собираются элементы, выделенные в списке.контейнер - div блок виджета, отображается в правой колонке.
+//         var names = [], // Массив имен
+//             length = c_data.length; // Количество выбранных id (отсчет начинается с 0)
+//         for (var i = 0; i < length; i++) {
+//             names[i] = {
+//                 ids: c_data[i].id
+//             };
+//         }
 
 
         for (i = 0; i < length; i++) {
@@ -76,6 +75,14 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     };
 
     Contact.render = function (self) {
+        
+        console.log('render function');
+        console.log(self.system().area);
+        
+        if (self.system().area === 'cucard' || 'lcard') {
+            
+            console.log(self.system().area);
+        }
         
         
 //         self.add_call_notify = function(mess){
@@ -166,53 +173,12 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     };
 
     Contact.bind_function = function (self) {
-        // if (self.system().area === 'clist' || 'llist') {
+        if (self.system().area === 'clist' || 'llist') {
             $('.ac-form-button').on('click', function () {
-                Contact.csv_request();
+//                 Contact.csv_request();
             });
         // }
         return true;
-    };
-
-    Contact.get_ccard_info = function (self) //Сбор информации из карточки контакта
-    {
-        if (self.system().area === 'ccard') {
-            var phones = $('.js-linked-with-actions.js-linked-has-actions.js-linked-has-value .linked-form__cf.text-input');
-            var new_phones = [];
-            for (var i = 0; i < phones.length; i++) {
-                new_phones.push(phones[i].defaultValue.replace(/[^0-9]/g, ''));
-            }
-
-            var url = window.location.href;
-            var strArray = url.split('/');
-            var current_id = strArray.pop();
-
-            var promises = [];
-            for (var j = 0; j < new_phones.length; j++) {
-                promises.push(new Promise(function (resolve, reject) {
-                    var phone = new_phones.pop();
-                    var link = '/private/api/v2/json/contacts/list?query=' + phone;
-                    $.get(link,
-                        function (data) {
-                            var result = [];
-                            var len = data['response']['contacts'].length;
-                            for (var i = 0; i < len; i++) {
-                                if (parseInt(data['response']['contacts'][i]['id']) === parseInt(current_id)) {
-                                    continue;
-                                }
-                                result.push(data['response']['contacts'][i]['name'].link('https://yodnorobov2.amocrm.ru/contacts/detail/' + data['response']['contacts'][i]['id']) + '<br>');
-                            }
-                            resolve(result);
-                        }, "json");
-                }));
-            }
-            Promise.all(promises).then(function (results) {
-                Contact.display_modal(results);
-            });
-        }
-        else {
-            return false;
-        }
     };
 
     Contact.display_modal = function (contacts) {
@@ -228,9 +194,9 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     Contact.init = function (self) {
         console.log('init');
-        if (self.system().area === 'ccard') {
-            self.contacts = Contact.get_ccard_info(self);
-        }
+//         if (self.system().area === 'ccard') {
+//             self.contacts = Contact.get_ccard_info(self);
+//         }
         return true;
     };
 
