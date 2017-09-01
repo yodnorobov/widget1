@@ -20,22 +20,22 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     var lang = self.i18n('userLang');
     w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
 
-    self.render_template({
-      caption: {
-        class_name: 'js-ac-caption',
-        html: ''
-      },
-      body: '',
-      render: '\
-               <div class="ac-form">\
-           <div id="js-ac-sub-lists-container">\
-           </div>\
-               <div id="js-ac-sub-subs-container">\
-               </div>\
-               <div class="ac-form-button ac_sub">SEND</div>\
-               </div>\
-           <div class="ac-already-subs"></div>\
-               <link type="text/css" rel="stylesheet" href="./style.css" >'
+//     self.render_template({
+//       caption: {
+//         class_name: 'js-ac-caption',
+//         html: ''
+//       },
+//       body: '',
+//       render: '\
+//                <div class="ac-form">\
+//            <div id="js-ac-sub-lists-container">\
+//            </div>\
+//                <div id="js-ac-sub-subs-container">\
+//                </div>\
+//                <div class="ac-form-button ac_sub">SEND</div>\
+//                </div>\
+//            <div class="ac-already-subs"></div>\
+//                <link type="text/css" rel="stylesheet" href="./style.css" >'
     });
     // }
     // console.log('rendering end');
