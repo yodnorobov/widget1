@@ -37,17 +37,21 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       $('.search_field_text').keyup(function () {
         var value = $('.search_field_text').val();
 
-        console.log(self.get_settings().widget_code);
-        console.log(self.get_settings().password);
-        console.log(self.get_settings().hash);
+        //console.log(self.get_settings().widget_code);
+        //console.log(self.get_settings().password);
+        //console.log(self.get_settings().hash);
+        
+        //AMOCRM.widgets.system
 
         //console.log(value);
 
         $.ajax({
           type: "GET",
-          url: 'https://yodnorobov.amocrm.ru/widgets/yodnorobov/loader/code_43/proxy/?value=%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0&amouser=yodnorobov@team.amocrm.com&amohash=35f0cde343e0d07871c275b5c2e1e149',
+          url: 'http://amobase.saas/article/search?q=contacts',
           success: function (data) {
             console.log(
+              data;
+              
               Contact.display_modal()
             )
           }
