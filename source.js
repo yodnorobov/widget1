@@ -7,7 +7,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
   Contact.render = function (self) {
 
-    self.widgetsOverlay(false);
+    //self.widgetsOverlay(false);
 
     console.log('render function');
     console.log(self.system().area);
