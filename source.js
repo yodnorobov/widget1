@@ -17,16 +17,16 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       console.log(self.system().area);
     }
 
-     var lang = self.i18n('userLang');
-     w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
+    var lang = self.i18n('userLang');
+    w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
 
-     self.render_template({
-         caption: {
-             class_name: 'js-ac-caption',
-             html: ''
-         },
-         body: '',
-         render: '\
+    self.render_template({
+      caption: {
+        class_name: 'js-ac-caption',
+        html: ''
+      },
+      body: '',
+      render: '\
                <div class="ac-form">\
            <div id="js-ac-sub-lists-container">\
            </div>\
@@ -36,42 +36,36 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
                </div>\
            <div class="ac-already-subs"></div>\
                <link type="text/css" rel="stylesheet" href="./style.css" >'
-     });
-     // }
+    });
+    // }
     // console.log('rendering end');
     // Contact.init(self);
     return true;
   };
 
-
-  Contact.csv_request = function () {
-    var request = 'https://yodnorobov2.amocrm.ru/ajax/' + Contact.type + '/export/?&export_type=csv';
-    for (var i = 0; i < Contact.data.length; i++) {
-      request = request + '&filter[ID][' + i + ']=' + Contact.data[i]['ids'];
-    }
-    document.location.href = request;
+  Contact.modal = function (data) {
+    var modal = new Modal({
+      class_name: 'modal-window',
+      init: function ($modal_body) {
+        var $this = $(this);
+        $modal_body
+          .trigger('modal:loaded') //запускает отображение модального окна
+          .html(data)
+          .trigger('modal:centrify')  //настраивает модальное окно
+          .append('<span class="modal-body__close">X<span class="icon icon-modal-    close"></span></span>');
+      },
+      destroy: function () {
+      }
+    });
+    return modal;
   };
 
-  Contact.ids_getter = function (self) {
 
-    console.log('id getter');
-
-    var c_data = self.list_selected().selected;
-    // $('#js-sub-lists-container').children().remove(); //Контейнер очищается затем в контейнер собираются элементы, выделенные в списке.контейнер - div блок виджета, отображается в правой колонке.
-    var names = [], // Массив имен
-      length = c_data.length; // Количество выбранных id (отсчет начинается с 0)
-    for (var i = 0; i < length; i++) {
-      names[i] = {
-        ids: c_data[i].id
-      };
-    }
-
-
-    for (i = 0; i < length; i++) {
-      $('#js-ac-sub-lists-container').append('<p>ID:' + names[i].ids + '</p>');
-    }
-    Contact.data = names;
-  };
+  //  for (i = 0; i < length; i++) {
+  //    $('#js-ac-sub-lists-container').append('<p>ID:' + names[i].ids + '</p>');
+  //  }
+  //  Contact.data = names;
+  //};
 
   Contact.leads_selected = function (self) {
     self.widgetsOverlay(false);
@@ -87,13 +81,12 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     Contact.csv_request();
   };
 
-
   Contact.bind_function = function (self) {
-    // if (self.system().area === 'clist' || 'llist') {
-    $('.ac-form-button').on('click', function () {
-      Contact.csv_request();
-    });
-    // }
+    if (self.system().area === 'culist' || 'llist') {
+      $('.ac-form-button').on('click', function () {
+        console.log('BUTTON CLICKED');
+      });
+    }
     return true;
   };
 
@@ -157,22 +150,31 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     return true;
   };
 
-  Contact.modal = function (data) {
-    var modal = new Modal({
-      class_name: 'modal-window',
-      init: function ($modal_body) {
-        var $this = $(this);
-        $modal_body
-          .trigger('modal:loaded') //запускает отображение модального окна
-          .html(data)
-          .trigger('modal:centrify')  //настраивает модальное окно
-          .append('<span class="modal-body__close">X<span class="icon icon-modal-    close"></span></span>');
-      },
-      destroy: function () {
-      }
-    });
-    return modal;
+
+  Contact.csv_request = function () {
+    var request = 'https://yodnorobov2.amocrm.ru/ajax/' + Contact.type + '/export/?&export_type=csv';
+    for (var i = 0; i < Contact.data.length; i++) {
+      request = request + '&filter[ID][' + i + ']=' + Contact.data[i]['ids'];
+    }
+    document.location.href = request;
   };
-  return Contact;
-});
+
+  Contact.ids_getter = function (self) {
+
+    console.log('id getter');
+
+    var c_data = self.list_selected().selected;
+    // $('#js-sub-lists-container').children().remove(); //Контейнер очищается затем в контейнер собираются элементы, выделенные в списке.контейнер - div блок виджета, отображается в правой колонке.
+    var names = [], // Массив имен
+      length = c_data.length; // Количество выбранных id (отсчет начинается с 0)
+    for (var i = 0; i < length; i++) {
+      names[i] = {
+        ids: c_data[i].id
+      };
+    }
+
+
+    return Contact;
+  }
+  );
 
