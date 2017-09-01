@@ -14,7 +14,11 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     }
 
     var lang = self.i18n('userLang');
-    w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
+    var w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
+    
+    console.log(w_code);
+    
+    
     
     return true;
   };
