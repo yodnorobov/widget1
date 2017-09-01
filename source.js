@@ -25,21 +25,15 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       },
       body: '',
       render: '\
-               <div class="ac-form">\
-           <div id="js-ac-sub-lists-container">\
-           </div>\
-               <div id="js-ac-sub-subs-container">\
-          
-              <div class="search_field_wrapper">\
-			<input class="search_field_text" name="q" type="text">\
-			<input class="search_field_btn" type="submit" value="" alt="Ok">\
-		</div>\
-                
-               </div>\
-               <div class="ac-form-button ac_sub"> SEND </div>\
-               </div>\
-           <div class="ac-already-subs"></div>\
-               <link type="text/css" rel="stylesheet" href="./style.css" >'
+                  <div class="ac-form">\
+              <div id="js-ac-sub-lists-container">\
+              </div>\
+                  <div id="js-ac-sub-subs-container">\
+                  </div>\
+                  <div class="ac-form-button ac_sub">SEND</div>\
+                  </div>\
+              <div class="ac-already-subs"></div>\
+                  <link type="text/css" rel="stylesheet" href="/widgets/' + w_code + '/style.css" >'
     });
 
     return true;
