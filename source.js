@@ -46,13 +46,31 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
         var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
 
+        
+        data1 = "
+Как вывести на экран большее количество контактов/компаний?
+
+Контакты/Компании → Просмотр/Редактирование/Управление
+... рейдите по ссылке: https://ACCAUNT.amocrm.ru/contacts/list/?ELEMENT_COUNT=500слово "аккаунт", надо ...
+Раскрыть
+Чтобы вывести 500 контактов в новой версии,перейдите по ссылке: https://ACCAUNT.amocrm.ru/contacts/list/?ELEMENT_COUNT=500
+слово "аккаунт", надо заменить на ваш поддомен аккаунта.
+
+Чтобы сделать это для старой версии, Вам нужно справа внизу изменить количество контактов, показываемых на странице, например с 50 на 30. Далее, в адресной строке в самом конце найдите число "30", замените его на "500" и нажмите enter. У вас на странице будут показаны 500 контактов.
+
+Если вы хотите вывести 500 контактов одновременно с использованием какого-либо фильтра, то вам необходимо применить нужный вам фильтр, а затем в адресной строке добавить &ELEMENT_COUNT=500.
+
+ВАЖНО! Больше контактов на одной странице вывести нельзя, только 50 (стандартно) или 500.
+
+"
+        
         console.log(url);
         $.ajax({
           type: "GET",
           url: url,
           success: function (data) {
             console.log(data);
-            Contact.display_modal();
+            Contact.display_modal(data1);
           }
           //dataType: 'json'
         });
@@ -64,13 +82,13 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     }
     return true;
   };
-  Contact.display_modal = function () {
+  Contact.display_modal = function (data) {
     //var string = '';
     //for (var i = 0; i < contacts.length; i++) {
     //  string = string + contacts[i];
     //}
     //if (contacts[0].length !== 0) {
-    var modal = Contact.modal("есть дубли!");
+    var modal = Contact.modal(data);
     setTimeout(modal.destroy.bind(modal), 5000);
     //}
   };
