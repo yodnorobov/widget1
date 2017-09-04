@@ -14,7 +14,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       },
       body: '',
       render: '\
-        <input class="search_field_text" name="q" type="text">'\
+        <input class="search_field_text" name="q" type="text">\
         <link type="text/css" rel="stylesheet" href="https://yodnorobov.github.io/widget1/style.css" >'
     });
 
