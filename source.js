@@ -36,7 +36,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log(value);
         var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_47/proxy2/?link=https://amobase.amocrm.ru/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
         var url2 = 'https://test1-yodnorobov.codeanyapp.com/proxy.php';
-        $.ajax({
+        var url3 = .html();
+    $.ajax({
           type: "GET",
           url: url,
           data: {"link":"https://amobase.amocrm.ru/article/search?q=" + value},
@@ -69,7 +70,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         var $this = $(this);
         $modal_body
           .trigger('modal:loaded') //запускает отображение модального окна
-          .html('<div>' + data + '<div>')
+          .html("<iframe src='https://amobase.amocrm.ru/search?q=' + value + '&page=1' + "?compact=yes' class='_support-frame'></iframe>")
           .trigger('modal:centrify')  //настраивает модальное окно
           .append('<span class="modal-body__close"><span class="icon icon-modal-close"></span></span>');
       },
