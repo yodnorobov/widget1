@@ -14,7 +14,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       },
       body: '',
       render: '\
-                  <input class="search_field_text" name="q" type="text">'
+                  <input class="search_field_text" name="q" type="text">'\
+                  <link type="text/css" rel="stylesheet" href="<link type="text/css" rel="https://yodnorobov.github.io/widget1/style.css" >'
     });
 
     return true;
@@ -62,16 +63,16 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
                                         width: '50%',
                                         height: '100%',
                                         overflow : 'auto',
-                                        padding: '0'
-                                     
+                                        padding: '0',
+          
                                     });
         
         var $this = $(this);
         $modal_body
           .trigger('modal:loaded') //запускает отображение модального окна
           .html('<div>' + data + '<div>')
-          .trigger('modal:top')  //настраивает модальное окно
-          .append('<span class="modal-body__close">X<span class="icon icon-modal-close"></span></span>');
+          .trigger('modal:centrify')  //настраивает модальное окно
+          .append('<span class="modal-body__close"><span class="icon icon-modal-close"></span></span>');
       },
       destroy: function () {
       }
