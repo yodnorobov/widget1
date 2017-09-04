@@ -36,15 +36,19 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log(value);
         var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_47/proxy2/?link=https://amobase.amocrm.ru/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
         var url2 = 'https://test1-yodnorobov.codeanyapp.com/proxy.php';
-        var url3 = .html();
-    $.ajax({
-          type: "GET",
-          url: url,
-          data: {"link":"https://amobase.amocrm.ru/article/search?q=" + value},
-          success: function (data) {
-            Contact.display_modal(data);
-          }
-        });
+    
+    
+    Contact.modal(value);
+    
+//     $.ajax({
+//           type: "GET",
+//           url: url,
+//           data: {"link":"https://amobase.amocrm.ru/article/search?q=" + value},
+//           success: function (data) {
+//             Contact.display_modal(data);
+//           }
+//         });
+    
       }, 2000);
       });
     }
