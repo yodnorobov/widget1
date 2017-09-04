@@ -33,12 +33,12 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     globalTimeout = null;  
         var value = $('.search_field_text').val();
         console.log(value);
-        var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=https://amobase.amocrm.ru/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
+        var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_47/proxy2/?link=https://amobase.amocrm.ru/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
         var url2 = 'https://test1-yodnorobov.codeanyapp.com/proxy.php';
         $.ajax({
           type: "GET",
-          url: url2,
-          data: {"link":"https://developers.amocrm.ru/search/?q=" + value},
+          url: url,
+          data: {"link":"https://amobase.amocrm.ru/article/search?q=" + value},
           success: function (data) {
             Contact.display_modal(data);
           }
