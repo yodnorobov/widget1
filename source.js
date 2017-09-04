@@ -2,21 +2,10 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
   var Contact = {};
 
-  Contact.data = [];
-  Contact.type = [];
-
   Contact.render = function (self) {
-
-    //console.log(self.system().area);
-
     if (self.system().area === 'cucard' || 'lcard') {
       console.log(self.system().area);
     }
-
-    //var lang = self.i18n('userLang');
-    //w_code = self.get_settings().widget_code; //в данном случае w_code='new-widget'
-    //
-    //console.log(w_code);
 
     self.render_template({
       caption: {
@@ -32,64 +21,63 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
   };
 
   Contact.bind_function = function (self) {
-    if (self.system().area === 'culist' || 'llist') {
-
+    if (self.system().area === 'cucard' || 'lcard') {
+      var globalTimeout = null;
+      
       $('.search_field_text').keyup(function () {
+        
+         if (globalTimeout != null) {
+    clearTimeout(globalTimeout);
+  }
+  globalTimeout = setTimeout(function() {
+    globalTimeout = null;  
         var value = $('.search_field_text').val();
-
-        //console.log(self.get_settings().widget_code);
-        //console.log(self.get_settings().password);
-        //console.log(self.get_settings().hash);
-        //url: 'http://amobase.saas/article/search?q=contacts'
-
-        console.log(AMOCRM.widgets.system);
-
-        var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=http://amobase.saas/article/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
-        console.log(url);
+        console.log(value);
+        var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_44/proxy/?link=https://amobase.amocrm.ru/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
+        var url2 = 'https://test1-yodnorobov.codeanyapp.com/proxy.php';
         $.ajax({
           type: "GET",
-          url: url,
+          url: url2,
+          data: {"link":"https://developers.amocrm.ru/search/?q=" + value},
           success: function (data) {
-            console.log(data);
-            Contact.display_modal(data1);
+            Contact.display_modal(data);
           }
-          //dataType: 'json'
         });
+      }, 2000);
       });
-      //$('.ac-form-button').on('click', function () {
-      //  var search_data = $('.search_field_text').text();
-      //  console.log('BUTTON CLICKED' + search_data);
-      //});
     }
     return true;
   };
   Contact.display_modal = function (data) {
-    //var string = '';
-    //for (var i = 0; i < contacts.length; i++) {
-    //  string = string + contacts[i];
-    //}
-    //if (contacts[0].length !== 0) {
-    var modal = Contact.modal(json_);
-    
-    setTimeout(modal.destroy.bind(modal), 5000);
+    var modal = Contact.modal(data);
+    //setTimeout(modal.destroy.bind(modal), 5000);
     //}
   };
   Contact.modal = function (data) {
     var modal = new Modal({
       class_name: 'modal-window',
       init: function ($modal_body) {
+        
+        $modal_body.css({
+                                        width: '30%',
+                                        height: '30%',
+                                        overflow : 'auto',
+                                        padding: '0'
+                                    });
+        
         var $this = $(this);
         $modal_body
           .trigger('modal:loaded') //запускает отображение модального окна
-          .html(data)
-          .trigger('modal:centrify')  //настраивает модальное окно
-          .append('<span class="modal-body__close">X<span class="icon icon-modal-    close"></span></span>');
+          .html('<div>' + data + '<div>')
+          .trigger('modal:top')  //настраивает модальное окно
+          .append('<span class="modal-body__close">X<span class="icon icon-modal-close"></span></span>');
       },
       destroy: function () {
       }
     });
     return modal;
   };
+
   Contact.init = function (self) {
     console.log('init');
     return true;
