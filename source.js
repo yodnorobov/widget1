@@ -60,12 +60,11 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       init: function ($modal_body) {
         
         $modal_body.css({
-                                        width: '50%',
-                                        height: '100%',
-                                        overflow : 'auto',
-                                        padding: '0',
-          
-                                    });
+          width: '50%',
+          height: '100%',
+          overflow : 'auto',
+          padding: '0',
+          });
         
         var $this = $(this);
         $modal_body
@@ -79,6 +78,12 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     });
     return modal;
   };
+  
+  Contact.getLastChat()
+  {
+    //var chats = AMOCRM.constant('amojo_chats')
+    return $('.feed-note-wrapper-amojo').last().find('p').text();
+  }
 
   Contact.init = function (self) {
     console.log('init');
