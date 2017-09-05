@@ -78,7 +78,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
           .trigger('modal:loaded')
             //.html("<iframe src='https://" + self.system().domain + "/_support/accounts/detail/" + self.user_account_id + "?compact=yes' class='_support-frame'></iframe>");
           //.html("<iframe src='https://amobase.amocrm.ru/search?q='" + data + " class='_amobase-frame'></iframe>")
-          .html("<iframe src='https://amobase.amocrm.ru/article/search?q="+ data + "&compact=no' class='_amobase-frame'></iframe>")
+          .html("<iframe src='https://amobase.amocrm.ru/article/search?q="+ data + "' class='_amobase-frame'></iframe>")
           .trigger('modal:centrify')
           .append('<span class="modal-body__close"><span class="icon icon-modal-close"></span></span>');
       },
