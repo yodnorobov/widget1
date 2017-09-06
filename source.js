@@ -60,8 +60,13 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     //self.system().domain
 
+    //iframe.contentWindow.document.getElementById("login");
+
   };
   Contact.modal = function (data) {
+
+    var last_comment = $('.feed-note-wrapper-amojo').last().find('p').text();
+
     var modal = new Modal({
       class_name: 'modal-window',
       init: function ($modal_body) {
@@ -76,9 +81,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         var $this = $(this);
         $modal_body
           .trigger('modal:loaded')
-            //.html("<iframe src='https://" + self.system().domain + "/_support/accounts/detail/" + self.user_account_id + "?compact=yes' class='_support-frame'></iframe>");
-          //.html("<iframe src='https://amobase.amocrm.ru/search?q='" + data + " class='_amobase-frame'></iframe>")
-          .html("<iframe src='http://amobase.saas/datafromcustomers/search?q="+ data + "' class='_amobase-frame'></iframe>")
+          //.html("<iframe src='https://" + self.system().domain + "/_support/accounts/detail/" + self.user_account_id + "?compact=yes' class='_support-frame'></iframe>");
+          .html("<iframe src='http://amobase.saas/datafromcustomers/search?q="+ data + '&' + last_comment + '&' + window.location.href + "&compact=no' class='_amobase-frame'></iframe>")
           .trigger('modal:centrify')
           .append('<span class="modal-body__close"><span class="icon icon-modal-close"></span></span>');
       },
