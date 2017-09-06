@@ -82,7 +82,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         $modal_body
           .trigger('modal:loaded')
           //.html("<iframe src='https://" + self.system().domain + "/_support/accounts/detail/" + self.user_account_id + "?compact=yes' class='_support-frame'></iframe>");
-          .html("<iframe src='http://amobase.saas/datafromcustomers/search?q="+ data + '&' + last_comment + '&' + window.location.href + "&compact=no' class='_amobase-frame'></iframe>")
+          .html("<iframe src='http://amobase.saas/datafromcustomers/search?q="+ data + '&last_comment=' + last_comment + '&chat_link=' + window.location.href + "' class='_amobase-frame'></iframe>")
           .trigger('modal:centrify')
           .append('<span class="modal-body__close"><span class="icon icon-modal-close"></span></span>');
       },
