@@ -72,7 +72,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       init: function ($modal_body) {
 
         $modal_body.css({
-          width: '100%',
+          width: '65%',
           height: '100%',
           overflow: 'auto',
           padding: '0'
