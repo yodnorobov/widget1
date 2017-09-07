@@ -27,7 +27,8 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     if (self.system().area === 'cucard' || 'lcard') {
       var globalTimeout = null;
 
-      $('.search_field_text').keyup(function () {
+      //$('.search_field_text').keyup(function () {
+      $(".ac-form-button").on('click', function () {
 
         if (globalTimeout != null) {
           clearTimeout(globalTimeout);
@@ -35,10 +36,6 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         globalTimeout = setTimeout(function () {
           globalTimeout = null;
           var value = $('.search_field_text').val();
-          console.log(value);
-          //var url = 'https://' + AMOCRM.widgets.system.subdomain + '.amocrm.ru/widgets/' + AMOCRM.widgets.system.subdomain + '/loader/code_47/proxy2/?link=https://amobase.amocrm.ru/search?q=' + value + '&page=1&amouser=' + AMOCRM.widgets.system.amouser + '&amohash=' + AMOCRM.widgets.system.amohash;
-          //var url2 = 'https://test1-yodnorobov.codeanyapp.com/proxy.php';
-
           Contact.modal(value);
 
 //     $.ajax({
@@ -94,11 +91,11 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     return modal;
   };
 
-  Contact.getLastChat = function (self)
-  {
+  //Contact.getLastChat = function (self)
+  //{
     //var chats = AMOCRM.constant('amojo_chats')
-    return $('.feed-note-wrapper-amojo').last().find('p').text();
-  };
+  //  return $('.feed-note-wrapper-amojo').last().find('p').text();
+  //};
 
   Contact.init = function (self) {
     console.log('init');
