@@ -4,7 +4,8 @@
 }
 
 .search_field_text {
-	width: 100px
+    width: 235px;
+    height: 25px;
 }
 .card-widgets__widget-new_widget .card-widgets__widget__body {
     padding: 0 10px 0px;
