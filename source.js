@@ -7,20 +7,21 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       console.log(self.system().area);
     }
 
-    self.render_template({
-      caption: {
-        class_name: 'js-amo_support-caption',
-        html: ''
-      },
-      body: '',
-      render: '\
-        <div class="card-widgets__widget card-widgets__widget-amo_support">\
-          <input class="search_field_text" name="q" type="text">\
-          <div class="ac-form-button ac_sub amo_support-button">SEND</div>\
-        </div>\
-        <link type="text/css" rel="stylesheet" href="https://yodnorobov.github.io/widget1/style.css" >'
-    });
-
+            self.render_template({
+          caption: {
+            class_name: 'js-amo_support-caption',
+            html: ''
+          },
+          body: '',
+          render: '\
+						<div class="amo_support-form">\
+              <input class="search_field_text" name="q" type="text">\
+							<div class="amo_support-button ac-form-button">\
+								<span> SEND </span>\
+						  </div>\
+						</div>\
+						<link type="text/css" rel="stylesheet" href="https://yodnorobov.github.io/widget1/style.css" >'
+        });
     return true;
   };
 
