@@ -1,3 +1,59 @@
+.card-widgets__widget-amo_support {
+  background-color: rgb(0, 128, 189);
+}
+
+.amo_support-form {
+  padding: 15px 15px 15px 15px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.amo_support-button {
+  padding: 5px 0;
+  background: #fafafb;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.amo_support-button-enable {
+  border: 1px solid #4077d6;
+  background: #4c8bf7;
+  color: #fff;
+}
+
+.amo_support-button-ellow {
+  background: #e5b023;
+  border-color: #d2a01a;
+  color: #fff;
+}
+
+.amo_support-selector_disabled {
+  background-color: #ffdbe0;
+  pointer-events: none;
+  cursor: default;
+}
+
+.amo_support-parrent__selector {
+  margin-left: 23px;
+  margin-top: 10px;
+  width: 85%;
+}
+
+.amo_support-form .spinner-icon {
+  margin: 0 auto;
+  border-bottom: 1px solid #f4f4f5;
+}
+
+
 ._amobase-frame {
 	height: 100%;
 	width: 100%;
