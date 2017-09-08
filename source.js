@@ -15,7 +15,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
       body: '',
       render: '\
         <div class="amo_support-form">\
-          <input class="search_field_text amo_support-button" name="q" type="text">\
+          <input class="search_field_text" name="q" type="text">\
           <div class="ac-form-button ac_sub amo_support-button">SEND</div>\
         </div>\
         <link type="text/css" rel="stylesheet" href="https://yodnorobov.github.io/widget1/style.css" >'
