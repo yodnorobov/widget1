@@ -9,12 +9,12 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
     self.render_template({
       caption: {
-        class_name: 'js-ac-caption',
+        class_name: 'js-amo_support-caption',
         html: ''
       },
       body: '',
       render: '\
-        <div class="amo_support-form card-widgets__widget-amo_support">\
+        <div class="card-widgets__widget card-widgets__widget-amo_support">\
           <input class="search_field_text" name="q" type="text">\
           <div class="ac-form-button ac_sub amo_support-button">SEND</div>\
         </div>\
